@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Yekanbakh';
-    src: url(./font/YekanBakh-VF.woff);
+    src: url(YekanBakh-VF.woff);
 }
 @import url('https://cdn.jsdelivr.net/gh/rastikerdar/yekan-bakh-font@v2.0.0/dist/font-face.css');
 
