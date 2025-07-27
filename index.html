@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>باشگاه آرنا - سامانه پرداخت</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/yekan-bakh-font@v2.0.0/dist/font-face.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="title-section">
+                <h1 class="main-title">باشگاه آرنا</h1>
+                <div class="crown-icon">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"/>
+                    </svg>
+                </div>
+            </div>
+            <p class="subtitle">سامانه پرداخت عضویت باشگاه</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">
+                    فرم ثبت نام و پرداخت
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                        <circle cx="9" cy="7" r="4"/>
+                        <path d="m22 21-3-3m0 0a5 5 0 1 0-7-7 5 5 0 0 0 7 7z"/>
+                    </svg>
+                </h2>
+            </div>
+            
+            <div class="card-content">
+                <form id="paymentForm">
+                    <div class="section">
+                        <h3 class="section-title">اطلاعات شخصی</h3>
+                        
+                        <div class="form-group">
+                            <label for="fullName">نام و نام خانوادگی</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="نام و نام خانوادگی خود را وارد کنید" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phoneNumber">شماره همراه</label>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="09xxxxxxxxx" dir="ltr" required>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">نوع عضویت</h3>
+                        
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="daily" name="membershipType" value="daily" data-price="500000">
+                                <label for="daily">
+                                    <div class="option-content">
+                                        <div class="option-info">
+                                            <div class="option-title">همه روزه</div>
+                                            <div class="option-description">دسترسی روزانه به تمام امکانات باشگاه</div>
+                                        </div>
+                                        <div class="option-price">750,000 تومان</div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="radio-option">
+                                <input type="radio" id="daily-treadmill" name="membershipType" value="daily-treadmill" data-price="650000">
+                                <label for="daily-treadmill">
+                                    <div class="option-content">
+                                        <div class="option-info">
+                                            <div class="option-title">همه روزه با تردمیل</div>
+                                            <div class="option-description">دسترسی روزانه + استفاده از تردمیل</div>
+                                        </div>
+                                        <div class="option-price">850,000 تومان</div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="radio-option">
+                                <input type="radio" id="alternate" name="membershipType" value="alternate" data-price="300000">
+                                <label for="alternate">
+                                    <div class="option-content">
+                                        <div class="option-info">
+                                            <div class="option-title">روز در میان</div>
+                                            <div class="option-description">دسترسی یک روز در میان به باشگاه</div>
+                                        </div>
+                                        <div class="option-price">600,000 تومان</div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="radio-option">
+                                <input type="radio" id="alternate-treadmill" name="membershipType" value="alternate-treadmill" data-price="400000">
+                                <label for="alternate-treadmill">
+                                    <div class="option-content">
+                                        <div class="option-info">
+                                            <div class="option-title">روز در میان با تردمیل</div>
+                                            <div class="option-description">دسترسی یک روز در میان + تردمیل</div>
+                                        </div>
+                                        <div class="option-price">680,000 تومان</div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="radio-option">
+                                <input type="radio" id="custom" name="membershipType" value="custom">
+                                <label for="custom">
+                                    <div id="option-title1">مبلغ دلخواه</div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h3 class="section-title">مبلغ پرداخت</h3>
+                        
+                        <div id="customAmountSection" class="form-group" style="display: none;">
+                            <label for="customAmount">مبلغ دلخواه (تومان)</label>
+                            <input type="number" id="customAmount" name="customAmount" placeholder="مبلغ مورد نظر را وارد کنید" dir="ltr">
+                        </div>
+                        
+                        <div id="amountDisplay" class="amount-display">
+                            <div class="amount-label">مبلغ قابل پرداخت</div>
+                            <div id="finalAmount" class="amount-value">انتخاب نشده</div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="paymentButton" class="payment-button" disabled>
+                        <span id="buttonText">پرداخت</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="14" x="2" y="5" rx="2"/>
+                            <line x1="2" x2="22" y1="10" y2="10"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p> باشگاه آرنا - تمامی حقوق محفوظ است . 1404</p>
+            <p>ساخته شده توسط حامد © </p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
